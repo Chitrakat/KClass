@@ -15,16 +15,39 @@ When instantiating a student it is not required to add classes, numclass, credit
 Adding classes require a class to me made. The method takes in a class as kClass. A student can only take a class if they have lesser than 3.5 credits or if the class is not full yet. Succesfully adding a student to a class decreses the available seats in the class and also adds credit worth the class in the students data, works with 1 and 0.5 credit classes.
 If classes are full or if student has maximum number of credits the program denies adding the class and throws an error (_just prints stuff_).
 
+```
+Bose = Prof("Bose")
+cs208 = KClass("CS208", "Programming Languages", Bose, max_students=3)
+student.add_class(cs208)
+```
+
 **Drop Course**
 
 Dropping courses takes in parameter Class as kClass. The method searches if the student is taking the course or not. If they are not taking the course the program outputs that the class was not found. If the class was found the method removes the class from student and also reduces credits that the class was worth, thus it works with 1 and 0.5 credit classes.
  
+ ```
+ student.drop_course(mus100)
+ ```
+ 
+ ![image](https://user-images.githubusercontent.com/66200383/202627577-00c1fc78-a11c-4afa-bb1d-5f8fe1c4ec9c.png)
+
+ 
 **Declare** 
 
-This method takes in parameter major and simply declares the students major
+This method takes in parameter major and simply declares the students major.
+```
+example_major = Major("example_major", kClass=[class100, class 200, class 300])
+student.declare(example_major)
+```
 
 **isGraduateMajor**
 This method takes in a major as a parameter and checks if the student is able to graduate with the major OR if the student will have to take additional classes to graduate with major.
+```
+suyash.isGraduateMajor(BscCS)
+ari.isGraduateMajor(BscCS)
+```
+![image](https://user-images.githubusercontent.com/66200383/202627285-b908a694-e407-4d1f-9ff2-371c502a1ee9.png)
+
 
 # KClass
 Kclass has parameters course code, title, professor, maximum students, credits and num students. Thus each class has all of those and is able to have dynamic credits (ie 1 , 0.5 1.5 etc), maximum students and current number of students enrolled in class to check available seats. 
