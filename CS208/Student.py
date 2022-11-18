@@ -33,13 +33,17 @@ class Student:
             print(f"{self.name} can't take more courses, max credit limit reached.")
 
     def drop_course(self, kClass):
+        found = False
         for i in self.classes:
             if i == kClass:
-                print("removing class")
+                found = True
+                print(f"removing {kClass.course_code}")
                 self.classes.remove(kClass)
                 self.credits -= kClass.credit
             else:
                 print("working...")
+        if found is False:
+            print("class could not be found... :(")
 
     def num_class(self):
         return self.numclass
